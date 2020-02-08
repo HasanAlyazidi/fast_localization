@@ -12,9 +12,7 @@ class LocalizationSettings {
     var languageCode = await prefs.get(_languageCodeKey);
     var countryCode = await prefs.get(_countryCodeKey);
 
-    return languageCode != null
-      ? Locale(languageCode, countryCode)
-      : null;
+    return languageCode != null ? Locale(languageCode, countryCode) : null;
   }
 
   static save(languageCode, countryCode) async {

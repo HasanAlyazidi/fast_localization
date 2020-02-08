@@ -9,13 +9,15 @@ class LocalizationApp extends StatefulWidget {
   final Function home;
   final Function(BuildContext) child;
 
-  LocalizationApp({Key key, this.title, this.theme, this.home, this.child}) : super(key: key);
+  LocalizationApp({Key key, this.title, this.theme, this.home, this.child})
+      : super(key: key);
 
   @override
-  _LocalizationAppState createState() =>_LocalizationAppState();
+  _LocalizationAppState createState() => _LocalizationAppState();
 
   static void reload(BuildContext context) {
-    final _LocalizationAppState appState = context.findAncestorStateOfType<_LocalizationAppState>();
+    final _LocalizationAppState appState =
+        context.findAncestorStateOfType<_LocalizationAppState>();
     appState.reload();
   }
 }
@@ -26,7 +28,7 @@ class _LocalizationAppState extends State<LocalizationApp> {
     if (widget.child != null) {
       return widget.child(context);
     }
-  
+
     return MaterialApp(
       theme: widget.theme,
       title: widget.title != null ? widget.title() : '',

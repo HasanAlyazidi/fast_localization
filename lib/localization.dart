@@ -18,13 +18,15 @@ class Localization {
     supportedLocales = _languages.keys.toList();
 
     WidgetsFlutterBinding.ensureInitialized();
-    Locale selectedLocale = await LocalizationSettings.get() ?? _languages.keys.first;
+    Locale selectedLocale =
+        await LocalizationSettings.get() ?? _languages.keys.first;
     _setLocale(Locale(selectedLocale.languageCode, selectedLocale.countryCode));
   }
 
   static Future changeLocale(Locale locale, BuildContext context) async {
     _setLocale(locale);
-    await LocalizationSettings.save(locale.languageCode, locale.countryCode ?? '');
+    await LocalizationSettings.save(
+        locale.languageCode, locale.countryCode ?? '');
     LocalizationApp.reload(context);
   }
 
@@ -58,7 +60,8 @@ class Localization {
     if (keys.length > 1) {
       for (int index = 0; index <= keys.length; index++) {
         if (obj.containsKey(keys[index]) && obj[keys[index]] is! String) {
-          return _resolve(keys.sublist(index + 1, keys.length).join('.'), obj[keys[index]]);
+          return _resolve(
+              keys.sublist(index + 1, keys.length).join('.'), obj[keys[index]]);
         }
 
         return obj[path];
@@ -69,7 +72,8 @@ class Localization {
   }
 
   // from flutter_i18n
-  static String _replaceParams(String translation, Map<String, String> translationParams) {
+  static String _replaceParams(
+      String translation, Map<String, String> translationParams) {
     for (final String paramKey in translationParams.keys) {
       translation = translation.replaceAll(
           RegExp('{{$paramKey}}'), translationParams[paramKey]);
