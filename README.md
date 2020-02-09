@@ -110,6 +110,116 @@ When you want to use own `MaterialApp`, `CupertinoApp`, or `WidgetsApp`.
 
 Check out [example/flexible.dart](https://github.com/HasanAlyazidi/fast_localization/blob/master/example/flexible.dart)
 
+## Using `LocalizationApp(...)`
+
+### Minimal
+
+| Argument | Type               | Example            | Required |
+|----------|--------------------|--------------------|----------|
+| title    | Function => String | () => t('title')   | Yes      |
+| home     | Function => Widget | () => HomeScreen() | Yes      |
+| theme    | ThemeData          | ThemeData.dark()   | No       |
+
+### Flexible
+
+| Argument | Type                             | Example              | Required |
+|----------|----------------------------------|----------------------|----------|
+| child    | Function(BuildContext) => Widget | (context) => MyApp() | Yes      |
+
+> You need to use either `Minimal` or `Flexible`
+
+## Using `Localization`
+
+### Functions
+
+| Function                         | Parameters                                    | Returns |
+|----------------------------------|-----------------------------------------------|---------|
+| `Localization.load(...)`         | (Map<Locale, Map<String, dynamic>> languages) | Future  |
+| `Localization.changeLocale(...)` | (Locale locale, [BuildContext context])       | Future  |
+| `Localization.translate(...)`    | (String key, [Map<String, String> params])    | String  |
+| `Localization.t(...)` (Alias)    | (String key, [Map<String, String> params])    | String  |
+
+### Fields
+
+| Field                           | Type         | Description                                |
+|---------------------------------|--------------|--------------------------------------------|
+| `Localization.locale`           | Locale       | Get current locale                         |
+| `Localization.supportedLocales` | List < Locale > | Get supported locales                      |
+| `Localization.languageCountry`  | String       | Get current locale to string, e.g. 'en_US' |
+
+> There is a global alias for `Localization.translate(key, params)` which is `t(key, params)`!
+
+## Localization Declarations
+
+### Flat
+
+```dart
+final en = {
+  "title": "Demo",
+  "welcome": "Hello World!",
+};
+```
+
+Usage:
+```dart
+Localization.translate('welcome');
+```
+
+```dart
+Localization.t('welcome');
+```
+
+```dart
+t('welcome');
+```
+
+### Nested
+
+```dart
+final en = {
+  "app": {
+    "name": "Demo",
+    "description": "A demo app",
+  },
+};
+```
+
+Usage:
+```dart
+Localization.translate('app.name');
+```
+
+```dart
+Localization.t('app.name');
+```
+
+```dart
+t('app.name');
+```
+
+### With Parameters
+
+```dart
+final en = {
+  "info": {
+    "name": "My name is {{name}}",
+  },
+};
+```
+
+Usage:
+```dart
+Localization.translate('info.name', {"name": "Hasan"});
+```
+
+```dart
+Localization.t('info.name', {"name": "Hasan"});
+```
+
+```dart
+t('info.name', {"name": "Hasan"});
+```
+
 ## TODO
 - [ ] Locale fallback
 - [x] Parameters support
