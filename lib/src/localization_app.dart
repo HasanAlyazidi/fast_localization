@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'localization.dart';
+import 'package:fast_localization/src/localization.dart';
 
 class LocalizationApp extends StatefulWidget {
   final Function title;

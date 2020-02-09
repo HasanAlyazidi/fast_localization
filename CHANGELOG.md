@@ -1,3 +1,11 @@
+## [0.3.0] - 2020-02-09
+
+* Hide internal files
+
+## [0.2.0] - 2020-02-09
+
+* Add usages
+
 ## [0.1.0] - 2020-02-09
 
 * Add translate funcion alias `Localization.t(key, params)`

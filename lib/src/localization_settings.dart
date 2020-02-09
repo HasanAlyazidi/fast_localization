@@ -1,5 +1,3 @@
-library flutter_localization;
-
 import 'package:flutter/material.dart' show Locale;
 import 'package:shared_preferences/shared_preferences.dart';
 

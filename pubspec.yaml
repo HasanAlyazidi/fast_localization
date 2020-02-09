@@ -1,6 +1,6 @@
 name: fast_localization
 description: Fast localization solution for flutter apps using Dart's `Map`
-version: 0.2.0
+version: 0.3.0
 author: Hasan Al-Yazidi <hassanx220@gmail.com>
 homepage: https://github.com/HasanAlyazidi/fast_localization
 

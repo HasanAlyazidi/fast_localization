@@ -1,4 +1,4 @@
 library fast_localization;
 
-export 'localization.dart';
-export 'localization_app.dart';
+export 'src/localization.dart';
+export 'src/localization_app.dart';

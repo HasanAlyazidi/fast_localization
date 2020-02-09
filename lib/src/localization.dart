@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'localization_app.dart';
-import 'localization_settings.dart';
+import 'package:fast_localization/src/localization_app.dart';
+import 'package:fast_localization/src/localization_settings.dart';
 
 String t(String key, [Map<String, String> params]) {
   return Localization.translate(key, params);
