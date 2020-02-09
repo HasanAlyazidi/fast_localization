@@ -23,11 +23,14 @@ class Localization {
     _setLocale(Locale(selectedLocale.languageCode, selectedLocale.countryCode));
   }
 
-  static Future changeLocale(Locale locale, BuildContext context) async {
+  static Future changeLocale(Locale locale, [BuildContext context]) async {
     _setLocale(locale);
     await LocalizationSettings.save(
         locale.languageCode, locale.countryCode ?? '');
-    LocalizationApp.reload(context);
+    
+    if (context != null) {
+      LocalizationApp.reload(context);
+    }
   }
 
   static String translate(String key, [Map<String, String> params]) {
