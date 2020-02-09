@@ -42,13 +42,73 @@ void main() async {
   ));
 }
 
-class HomeScreen extends StatelessWidget { ... }
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      ...
+    );
+  }
+}
 ```
+
+#### When to use:
+When you want the `home` and `title` of `MaterialApp` only.
+
+`MaterialApp(title: 'App Name', home: HomeScreen());`
+
+#### Full example:
+
+Check out [example/fast_localization.dart](https://github.com/HasanAlyazidi/fast_localization/blob/master/example/fast_localization.dart)
 
 ### Flexible
 
+> You need to install flutter_localizations
+
 ```dart
+import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:fast_localization/fast_localization.dart';
+
+void main() async {
+  final en = {
+    "title": "Demo",
+    "welcome": "Hello World!",
+  };
+
+  final ar = {
+    "title": "عرض",
+    "welcome": "أهلاً بالعالم!",
+  };
+
+  final locales = {
+    Locale('en'): en,
+    Locale('ar'): ar,
+  };
+
+  await Localization.load(locales);
+
+  runApp(LocalizationApp(
+    child: (context) => MyApp(),
+  ));
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      ...
+    );
+  }
+}
 ```
+
+#### When to use:
+When you want to use own `MaterialApp`, `CupertinoApp`, or `WidgetsApp`.
+
+#### Full example:
+
+Check out [example/flexible.dart](https://github.com/HasanAlyazidi/fast_localization/blob/master/example/flexible.dart)
 
 ## TODO
 - [ ] Add tests
