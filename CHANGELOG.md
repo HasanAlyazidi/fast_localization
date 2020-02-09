@@ -1,3 +1,8 @@
+## [0.1.0] - 2020-02-09
+
+* Add translate funcion alias `Localization.t(key, params)`
+* Add translate funcion alias `t(key, params)`!
+
 ## [0.0.4] - 2020-02-09
 
 * Make changeLocale() testable

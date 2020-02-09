@@ -112,6 +112,7 @@ Check out [example/flexible.dart](https://github.com/HasanAlyazidi/fast_localiza
 
 ## TODO
 - [ ] Locale fallback
+- [x] Parameters support
 - [x] Nested localizations
 - [x] Auto save/load local
 - [x] Language code only support `Locale('en')`

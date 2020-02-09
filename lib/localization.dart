@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'localization_app.dart';
 import 'localization_settings.dart';
 
+String t(String key, [Map<String, String> params]) {
+  return Localization.translate(key, params);
+}
+
 class Localization {
   static Map<Locale, Map<String, dynamic>> _languages;
   static Locale _locale;
@@ -25,9 +29,10 @@ class Localization {
 
   static Future changeLocale(Locale locale, [BuildContext context]) async {
     _setLocale(locale);
+
     await LocalizationSettings.save(
         locale.languageCode, locale.countryCode ?? '');
-    
+
     if (context != null) {
       LocalizationApp.reload(context);
     }
@@ -41,6 +46,10 @@ class Localization {
     }
 
     return translation ?? '{{$key}} not found';
+  }
+
+  static String t(String key, [Map<String, String> params]) {
+    return translate(key, params);
   }
 
   static void _setLocale(Locale locale) {
