@@ -111,11 +111,11 @@ When you want to use own `MaterialApp`, `CupertinoApp`, or `WidgetsApp`.
 Check out [example/flexible.dart](https://github.com/HasanAlyazidi/fast_localization/blob/master/example/flexible.dart)
 
 ## TODO
-- [ ] Add tests
-- [ ] Code factoring
+- [ ] Locale fallback
 - [x] Nested localizations
 - [x] Auto save/load local
 - [x] Language code only support `Locale('en')`
 - [x] Language and country code support `Locale('en', 'US')`
+- [x] Add tests
 
 PRs are always welcome and appreciated!
