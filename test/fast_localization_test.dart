@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() {
   test('runs MaterialApp', () {
     final app = LocalizationApp(title: () => 'test');
-    expect(app.title(), 'test');
+    expect(app.title!(), 'test');
   });
 
   test('loads Localization', () async {
@@ -61,6 +61,7 @@ void main() {
       },
     };
 
+    await Localization.changeLocale(locales.keys.first);
     await Localization.load(locales);
 
     expect(Localization.t('info.id'), "20200209");

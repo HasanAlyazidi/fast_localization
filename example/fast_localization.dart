@@ -45,13 +45,13 @@ class HomeScreen extends StatelessWidget {
             Text(Localization.translate('title'),
                 style: TextStyle(fontSize: 25)),
             SizedBox(height: 60),
-            FlatButton(
+            TextButton(
               child: Text('English'),
               onPressed: () {
                 Localization.changeLocale(Locale('en'), context);
               },
             ),
-            FlatButton(
+            TextButton(
               child: Text('عربي'),
               onPressed: () {
                 Localization.changeLocale(Locale('ar'), context);

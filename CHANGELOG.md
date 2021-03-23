@@ -1,3 +1,7 @@
+## [1.0.0] - 2021-03-22
+
+* Null safety support
+
 ## [0.3.0] - 2020-02-09
 
 * Hide internal files
